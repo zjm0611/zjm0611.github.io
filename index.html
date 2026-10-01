@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人简历</title>
+<meta name="description" content="金融工程专业本科生个人简历">
+<meta name="color-scheme" content="dark light">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 背景层：粒子星网（画布）+ 网格 + 光晕，均为纯装饰 -->
+<canvas class="bg-canvas" id="bgCanvas" aria-hidden="true"></canvas>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow" aria-hidden="true"></div>
+
+<div class="progress" id="progress"></div>
+
+<div class="draft-banner" id="draftBanner">
+  <span>当前为草稿版本，页面上用〔…〕标出的内容需要你确认或填写。改 <code>js/resume-data.js</code> 即可，改完存盘刷新就生效。</span>
+  <button type="button" id="draftClose" aria-label="关闭提示">关闭</button>
+</div>
+
+<div class="page">
+
+  <aside class="side">
+    <div class="side-inner">
+
+      <div class="avatar" id="avatar" aria-hidden="true"></div>
+
+      <h1 class="name" id="name"></h1>
+      <p class="intent" id="intent"></p>
+      <p class="tagline" id="tagline"></p>
+
+      <ul class="contacts" id="contacts"></ul>
+
+      <div class="cta-row">
+        <button type="button" class="cta-btn" id="printBtn">
+          <span class="cta-mark" aria-hidden="true"></span>
+          <span>下载 PDF 简历</span>
+        </button>
+        <p class="cta-hint">会打开打印预览，选「另存为 PDF」即可</p>
+      </div>
+
+      <div class="side-block">
+        <h2 class="side-title">技能关键词</h2>
+        <ul class="tags" id="skillTags"></ul>
+      </div>
+
+      <div class="side-actions">
+        <button type="button" class="ghost-btn" id="themeToggle">
+          <span id="themeLabel">深色模式</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <nav class="section-nav" id="sectionNav" aria-label="章节导航"></nav>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="sections" id="sections"></div>
+
+    <footer class="foot">
+      <span id="footYear"></span>
+    </footer>
+
+  </main>
+
+</div>
+
+<button type="button" class="to-top" id="toTop" aria-label="回到顶部">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<!-- 手机端浮动下载：桌面端不出现，窄屏滚过侧栏主按钮后浮出 -->
+<button type="button" class="mobile-dl" id="mobileDl" aria-label="下载 PDF 简历">
+  <span class="cta-mark" aria-hidden="true"></span>
+  <span>下载 PDF</span>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/photos.js"></script>
+<script src="js/resume-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
