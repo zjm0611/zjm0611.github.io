@@ -463,13 +463,10 @@
     });
   }
 
-  /* ---------- 打印 ---------- */
-
-  function initPrint() {
-    $('printBtn').addEventListener('click', function () {
-      window.print();
-    });
-  }
+  /* ---------- 下载 ----------
+     下载按钮已经是一个 <a download>，指向 files/ 里的真实 PDF，
+     浏览器自己就能处理，这里不需要再加点击逻辑。
+     保留 @media print 样式只是为了让人按 Ctrl+P 时也能打出好看的版本。 */
 
   /* ==========================================================================
      以下为科技风动效层：全部是「加上去」的，删掉任何一段功能都不受影响
@@ -905,7 +902,7 @@
 
       // 侧栏那颗「下载 PDF 简历」滚出屏幕之后，浮动按钮才浮上来，
       // 免得同一个动作在屏幕上同时出现两次。
-      var anchor = $('printBtn');
+      var anchor = $('downloadBtn');
       var out = anchor
         ? anchor.getBoundingClientRect().bottom < 0
         : document.documentElement.scrollTop > 420;
@@ -929,7 +926,8 @@
       mq.addListener(schedule);           // 老浏览器兜底
     }
 
-    btn.addEventListener('click', function () { window.print(); });
+    // 不再绑点击事件：它自己是 <a download>，浏览器会直接下载。
+    // （之前这里绑的是 window.print()，留着会导致点一下既下载又弹打印框。）
 
     update();
   }
@@ -951,7 +949,6 @@
     initBanner();
     initProgress();
     initNavHighlight();
-    initPrint();
 
     // 动效层
     initBackground();
