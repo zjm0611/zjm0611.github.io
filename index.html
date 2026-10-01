@@ -35,12 +35,16 @@
 
       <ul class="contacts" id="contacts"></ul>
 
+      <!-- 下载入口：指向 files/ 里真实的 PDF 文件，点击即保存。
+           换简历文件时，把新 PDF 放进 files/，然后改下面两处 href 和 download 即可。
+           （用 <a download> 而不是按钮 + window.print()，是为了不依赖 JS 也能下载。） -->
       <div class="cta-row">
-        <button type="button" class="cta-btn" id="printBtn">
+        <a class="cta-btn" id="downloadBtn"
+           href="files/张津铭-简历.pdf" download="张津铭-简历.pdf">
           <span class="cta-mark" aria-hidden="true"></span>
           <span>下载 PDF 简历</span>
-        </button>
-        <p class="cta-hint">会打开打印预览，选「另存为 PDF」即可</p>
+        </a>
+        <p class="cta-hint">点击即可保存 PDF 文件，可直接投递</p>
       </div>
 
       <div class="side-block">
@@ -78,10 +82,11 @@
 </button>
 
 <!-- 手机端浮动下载：桌面端不出现，窄屏滚过侧栏主按钮后浮出 -->
-<button type="button" class="mobile-dl" id="mobileDl" aria-label="下载 PDF 简历">
+<a class="mobile-dl" id="mobileDl"
+   href="files/张津铭-简历.pdf" download="张津铭-简历.pdf" aria-label="下载 PDF 简历">
   <span class="cta-mark" aria-hidden="true"></span>
   <span>下载 PDF</span>
-</button>
+</a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
