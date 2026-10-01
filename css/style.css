@@ -411,9 +411,11 @@ html[data-theme='dark'] .bg-glow {
   border-radius: 10px;
   background: linear-gradient(118deg, var(--accent-2), var(--accent) 62%, var(--accent-3));
   color: var(--cta-text);
+  font-family: inherit;
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: .02em;
+  text-decoration: none;      /* 它是 <a>，去掉默认下划线 */
   cursor: pointer;
   box-shadow: 0 12px 28px -16px var(--glow), 0 0 0 1px var(--accent-soft);
   transition: transform .18s var(--ease), box-shadow .24s var(--ease),
@@ -1208,6 +1210,7 @@ html[data-theme='dark'] .bg-glow {
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: .02em;
+  text-decoration: none;      /* 它是 <a>，去掉默认下划线 */
   cursor: pointer;
   box-shadow: 0 14px 32px -14px var(--glow), 0 0 0 1px var(--accent-soft);
   opacity: 0;
