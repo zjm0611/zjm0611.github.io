@@ -48,8 +48,8 @@ const RESUME = {
      prefix / suffix 是数字前后缀，decimals 是小数位。
      删掉整个 stats 字段就不显示这一条。 */
   stats: [
-    { value: 2, label: '国家级竞赛一等奖' },
-    { value: 1, label: '省级竞赛一等奖' },
+    { value: 1, label: '国家级竞赛一等奖' },
+    { value: 2, label: '省级竞赛一等奖' },
     { value: 3.8, decimals: 1, suffix: ' / 4.0', label: '平均绩点' },
     { value: 5, prefix: '前 ', suffix: '%', label: '专业排名' }
   ],
@@ -163,7 +163,7 @@ const RESUME = {
       items: [
         { label: '「正大杯」全国大学生市场调查与分析大赛', value: '国家级一等奖' },
         { label: '湖南省大学生市场调查与分析大赛', value: '省级一等奖' },
-        { label: '全国高校商业精英挑战赛跨境电商赛道', value: '国家级一等奖' }
+        { label: '全国高校商业精英挑战赛跨境电商赛道', value: '省级一等奖' }
       ]
     },
 
